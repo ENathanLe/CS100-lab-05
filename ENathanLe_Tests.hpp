@@ -20,7 +20,7 @@ TEST(ENathanLe_integrated, normal_sheet) {
     sheet.set_selection(selectAnd);
     std::ostringstream out;
     sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "");
+    EXPECT_EQ(out.str(), "Bri Beck 2 comp sci \nCaBrio CaBecko Ca2o Macomp scio \n");
     out.str(std::string());
     sheet.clear();
 
@@ -42,7 +42,7 @@ TEST(ENathanLe_integrated, multiple_OrAnd) {
     sheet.set_selection(selectAnd);
     std::ostringstream out;
     sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "");
+    EXPECT_EQ(out.str(), "Carol Conners 21 computer science \n");
     out.str(std::string());
     sheet.clear();
 }
@@ -63,7 +63,7 @@ TEST(ENathanLe_integrated, OrNot) {
     sheet.set_selection(selectOr);
     std::ostringstream out;
     sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "");
+    EXPECT_EQ(out.str(), "John Meyer 20 mathematics \nBrian Becker 21 computer science \nBrienne Andrews 22 physics \nCarol Dole 19 computer science \nJack Daniels 24 business \nCarol Conners 21 computer science \nJoe Jackson 21 mathematics \nSarah Summers 21 computer science \nDiane Dole 20 computer engineering \n");
     out.str(std::string());
     sheet.clear();
 }
