@@ -5,12 +5,9 @@
 #include "select.hpp"
 
 class Select_Not: public Select_Column {
-private: 
-	std::string target; 
 public:
-	Select_Not(const Spreadsheet* sheet, const std::string& name, const std::string& input) : Select_Column(sheet, name), target(input) {}
-
-	bool Select_Not(const std::string& s) const : select() { return target != s; }
+	Select_Not(Select* selection) : Inv(selection) {}
+	bool select(const std::string& s) const{ return !Inv.select(); }
 };
 
 #endif //__SELECT_NOT_HPP__
