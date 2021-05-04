@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "spreadsheet.hpp"
 #include <string>
-#include "select_all_mocks.hpp"
+#include "select_mock.hpp"
 #include <sstream>
 #include <string>
 #include <iostream>

@@ -3,7 +3,7 @@
 
 #include "gtest/gtest.h"
 #include "Select_Not.hpp"
-#include "spreadsheet.cpp"
+#include "spreadsheet.hpp"
 #include "SELECT_CONTAINS_MOCK.hpp"
 #include <string>
 
