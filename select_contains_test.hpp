@@ -44,8 +44,37 @@ TEST(select_containsTest, Select_ContainsSpacingChars) {
     EXPECT_TRUE(test->select("Hello \tworld")); //test multiple spacing chars
 }
 
+TEST(select_containsTestSheet, Select_ContainsSheet) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"First","Last","Age","Major"});
+    sheet.add_row({"Brian","Becker","21","computer science"});
+    Select* test = new Select_Contains(&sheet, "First", "Brian");
+    EXPECT_TRUE(test->select(&sheet, 0)); //normal test case of sheet
+}
 
+TEST(select_containsTestSheet, Select_ContainsEmpty) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"First","Last","Age","Major"});
+    sheet.add_row({"","","",""});
+    Select* test = new Select_Contains(&sheet, "First", "Brian");
+    EXPECT_FALSE(test->select(&sheet, 0)); //test empty row
+}
 
+TEST(select_containsTestSheet, Select_ContainsSubstr) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"First","Last","Age","Major"});
+    sheet.add_row({"Brian","CaBecker","21","computer science"});
+    Select* test = new Select_Contains(&sheet, "Last", "Beck");
+    EXPECT_TRUE(test->select(&sheet, 0)); //search for a substring inside of the string
+}
+
+TEST(select_containsTestSheet, Select_ContainsSpaces) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"First","Last","Age","Major"});
+    sheet.add_row({"Brian","Becker","21","computer science"});
+    Select* test = new Select_Contains(&sheet, "Major", " ");
+    EXPECT_TRUE(test->select(&sheet, 0)); //test search for a single space
+}
 
 #endif
 
