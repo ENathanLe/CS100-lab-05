@@ -1,6 +1,10 @@
-CMakeCache.txt
+
+MakeCache.txt
 CMakeFiles/
-Makefile	
+Makefile
 cmake_install.cmake
+CMakeCache.txt
 lib/
 test
+spreadsheet
+
