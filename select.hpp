@@ -2,6 +2,9 @@
 #define __SELECT_HPP__
 
 #include <cstring>
+#include "spreadsheet.hpp"
+#include <string>
+
 
 class Select
 {
