@@ -15,12 +15,28 @@
 ////    sheet.add_row({"CaBrio","CaBecko","Ca2o","Macomp scio"});//normal row appended, row = 3
 ////    sheet.add_row({"   ","\n   ","\t","\t\n "});//spacing row, row = 4
 //
-TEST(select_AndTest, Select_AndStr) {
+TEST(select_AndTest, Select_AndTF) {
     Spreadsheet sheet;
     Select* selectMock1 = new Select_MockFalse();
     Select* selectMock2 = new Select_MockTrue();
     Select_And* test = new Select_And(selectMock1, selectMock2);
+    EXPECT_FALSE(test->select(&sheet, 2));
+}
+
+TEST(select_AndTest, Select_AndTT) {
+    Spreadsheet sheet;
+    Select* selectMock1 = new Select_MockTrue();
+    Select* selectMock2 = new Select_MockTrue();
+    Select_And* test = new Select_And(selectMock1, selectMock2);
     EXPECT_TRUE(test->select(&sheet, 2));
+}
+
+TEST(select_AndTest, Select_AndFF) {
+    Spreadsheet sheet;
+    Select* selectMock1 = new Select_MockFalse();
+    Select* selectMock2 = new Select_MockFalse();
+    Select_And* test = new Select_And(selectMock1, selectMock2);
+    EXPECT_FALSE(test->select(&sheet, 2));
 }
 
 
