@@ -30,10 +30,8 @@ TEST(spreadsheet_test, spreadsheet_full) {
     Select* trueMock = new Select_MockTrue();
     std::ostringstream out;
     sheet.print_selection(out);
-    std::string text = out.str();
-    EXPECT_EQ(text, "    \nBrian Becker 21 computer science \nBri Beck 2 comp sci \nCaBrio CaBecko Ca2o Macomp scio \n     \n    \t \t\n  \n");
+    EXPECT_EQ(out.str(), "    \nBrian Becker 21 computer science \nBri Beck 2 comp sci \nCaBrio CaBecko Ca2o Macomp scio \n     \n    \t \t\n  \n");
     out.str(std::string());
-    delete trueMock;
     sheet.clear();
 
 }
