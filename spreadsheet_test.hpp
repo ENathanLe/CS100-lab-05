@@ -28,11 +28,13 @@ TEST(spreadsheet_test, spreadsheet_full) {
     sheet.add_row({"CaBrio","CaBecko","Ca2o","Macomp scio"});//normal row appended, row = 3
     sheet.add_row({"   ","\n   ","\t","\t\n "});//spacing row, row = 4
     Select* trueMock = new Select_MockTrue();
-    //std::ostringstream out;
-    //sheet.print_selection(out);
-    std::string text = "";// = out.str();
+    std::ostringstream out;
+    sheet.print_selection(out);
+    std::string text = out.str();
     EXPECT_EQ(text, "    \nBrian Becker 21 computer science \nBri Beck 2 comp sci \nCaBrio CaBecko Ca2o Macomp scio \n     \n    \t \t\n  \n");
-
+    out.str(std::string());
+    delete trueMock;
+    sheet.clear();
 
 }
 
