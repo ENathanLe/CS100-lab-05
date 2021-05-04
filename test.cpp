@@ -6,6 +6,7 @@
 #include "Select_Or_Test.hpp"
 #include "select_contains_test.hpp"
 #include "select_and_test.hpp"
+#include "ENathanLe_Tests.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
