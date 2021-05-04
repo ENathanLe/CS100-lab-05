@@ -8,6 +8,9 @@ class Select_Not: public Select {
 public:
 	Select_Not(Select* selection) : Inv(selection) {}
 	bool select(const Spreadsheet* sheet, int row) const{ return !(Inv->select(sheet, row)); }
+	~Select_Not() {
+		delete Inv;	
+	}
 private: 
 	Select* Inv;
 };

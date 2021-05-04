@@ -12,6 +12,7 @@ TEST(select_notTest, select_notT) {
 	Select* SelectMockOne = new Select_Contains_Mock_True();
 	Select* test = new Select_Not(SelectMockOne);
 	EXPECT_FALSE(test->select(&sheet, 2));	
+	delete test;
 } 
 
 TEST(select_notTest, select_notF) {
@@ -19,6 +20,6 @@ TEST(select_notTest, select_notF) {
 	Select* SelectMockOne = new Select_Contains_Mock_False();
 	Select* test = new Select_Not(SelectMockOne);
 	EXPECT_TRUE(test->select(&sheet,2));
-
+	delete test;
 }
 #endif
