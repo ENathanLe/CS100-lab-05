@@ -14,4 +14,3 @@ bool Select_Contains::select(const std::string& s) const {
 
 }
 
-
