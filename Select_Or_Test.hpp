@@ -13,6 +13,7 @@ TEST(select_orTest, select_OrTT) {
 	Select* sm2 = new Select_Contains_Mock_True();
 	Select_Or* test = new Select_Or(sm1, sm2);
 	EXPECT_TRUE(test->select(&sheet, 2));
+	delete test;
 }
 
 TEST(select_orTest, select_OrFF) {
@@ -21,6 +22,7 @@ TEST(select_orTest, select_OrFF) {
 	Select* sm2 = new Select_Contains_Mock_False();
 	Select_Or* test = new Select_Or(sm1, sm2);
 	EXPECT_TRUE(test->select(&sheet, 2));
+	delete test;
 }
 
 TEST(select_orTest, select_OrTF) {
@@ -29,6 +31,7 @@ TEST(select_orTest, select_OrTF) {
 	Select* sm2 = new Select_Contains_Mock_False();
 	Select_Or* test = new Select_Or(sm1, sm2);
 	EXPECT_FALSE(test->select(&sheet, 2));
+	delete test;
 }
 #endif
 
