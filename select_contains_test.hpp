@@ -2,8 +2,8 @@
 #define __SELECT_CONTAINS_TEST_HPP__
 
 #include "gtest/gtest.h"
-#include "select_contains.cpp"
-#include "spreadsheet.cpp"
+#include "select_contains.hpp"
+#include "spreadsheet.hpp"
 #include <string>
 
 //Spreadsheet sheet;
