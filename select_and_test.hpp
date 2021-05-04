@@ -22,8 +22,6 @@ TEST(select_AndTest, Select_AndTF) {
     Select_And* test = new Select_And(selectMock1, selectMock2);
     EXPECT_FALSE(test->select(&sheet, 2));
     delete test;
-    delete selectMock1;
-    delete selectMock2;
 }
 
 TEST(select_AndTest, Select_AndTT) {
@@ -33,8 +31,6 @@ TEST(select_AndTest, Select_AndTT) {
     Select_And* test = new Select_And(selectMock1, selectMock2);
     EXPECT_TRUE(test->select(&sheet, 2));
     delete test;
-    delete selectMock1;
-    delete selectMock2;
 }
 
 TEST(select_AndTest, Select_AndFF) {
@@ -44,8 +40,6 @@ TEST(select_AndTest, Select_AndFF) {
     Select_And* test = new Select_And(selectMock1, selectMock2);
     EXPECT_FALSE(test->select(&sheet, 2));
     delete test;
-    delete selectMock1;
-    delete selectMock2;
 }
 
 
